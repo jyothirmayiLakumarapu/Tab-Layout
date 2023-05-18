@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab content</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero">
+       <div class="btn-box">
+        <button id="btn1" onclick="openHTML()"><i class="fa fa-html5"></i>HTML</button>
+        <button id="btn2" onclick="openCSS()"><i class="fa fa-css3"></i>CSS</button> 
+        <button id="btn3" onclick="openJS()"><i class="fa fa-codepen"></i>JAVASCRIPT</button>   
+        </div>
+        <!-- html content -->
+        <div id="content1" class="content">
+            <div class="content-left">
+             <h1>Learn HTML</h1>
+             <p>The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser.
+                It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.</p>
+             <a href="https://www.youtube.com/watch?v=v6-4wh_o9iM&t=185s">Watch Video</a> 
+            </div>
+            <div class="content-right">
+             <img src="./image2.jpg"/>
+            </div>
+        </div>
+        
+        <div id="content2" class="content">
+            <div class="content-left">
+             <h1>Learn CSS</h1>
+             <p>CSS stands for Cascading Style Sheets. It is a style sheet language which is used to describe the look and formatting of a document written in markup language.
+                t provides an additional feature to HTML. It is generally used with HTML to change the style of web pages and user interfaces.</p>
+             <a href="https://www.youtube.com/watch?v=v6-4wh_o9iM&t=185s">Watch Video</a> 
+            </div>
+            <div class="content-right">
+             <img src="./image1.jpg"/>
+            </div> 
+        </div>    
+            <div id="content3" class="content">
+                <div class="content-left">
+                 <h1>Learn JAVASCRIPT</h1>
+                 <p>JavaScript (js) is a light-weight object-oriented programming language which is used by several websites for scripting the webpages.
+                    It is an interpreted, full-fledged programming language that enables dynamic interactivity on websites.</p>
+                 <a href="https://www.youtube.com/watch?v=v6-4wh_o9iM&t=185s">Watch Video</a> 
+                </div>
+                <div class="content-right">
+                 <img src="./image3.jpg"/>
+                </div>
+            </div>                
+        </div>
+
+        <script>
+            var content1 = document.getElementById("content1");
+            var content2 = document.getElementById("content2");
+            var content3 = document.getElementById("content3");
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            var btn3 = document.getElementById("btn3");
+
+            function openHTML(){
+               content1.style.transform = "translatex(0)";
+               content2.style.transform = "translatex(100%)";
+               content3.style.transform = "translatex(100%)";
+               btn1.style.color = "#ff7846";
+               btn2.style.color = "#000";
+               btn3.style.color = "#000";
+               content1.style.transitionDelay = "0.3s";
+               content2.style.transitionDelay = "0s";
+               content3.style.transitionDelay = "0s";
+
+            }
+            function openCSS(){
+               content1.style.transform = "translatex(100%)";
+               content2.style.transform = "translatex(0)";
+               content3.style.transform = "translatex(100%)";
+               btn2.style.color = "#ff7846";
+               btn1.style.color = "#000";
+               btn3.style.color = "#000";
+               content1.style.transitionDelay = "0s";
+               content2.style.transitionDelay = "0.3s";
+               content3.style.transitionDelay = "0s";
+
+            }
+            function openJS(){
+               content1.style.transform = "translatex(100%)";
+               content2.style.transform = "translatex(100%)";
+               content3.style.transform = "translatex(0)";
+               btn3.style.color = "#ff7846";
+               btn2.style.color = "#000";
+               btn1.style.color = "#000";
+               content1.style.transitionDelay = "0s";
+               content2.style.transitionDelay = "0s";
+               content3.style.transitionDelay = "0.3s";
+
+            }
+        </script>
+</body>
+</html>
