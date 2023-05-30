@@ -16,7 +16,7 @@ const htmlCont = () => {
         <a href="https://www.youtube.com/watch?v=v6-4wh_o9iM&t=185s">Watch Video</a>
       </div>
       <div className="content-right">
-      <img src={image1} />
+        <img src={image1} />
       </div>
     </div>
   )
@@ -32,7 +32,7 @@ const cssCont = () => {
         <a href="https://www.youtube.com/watch?v=v6-4wh_o9iM&t=185s">Watch Video</a>
       </div>
       <div className="content-right">
-      <img src={image2} />
+        <img src={image2} />
       </div>
     </div>
   )
@@ -48,7 +48,7 @@ const jsCont = () => {
         <a href="https://www.youtube.com/watch?v=v6-4wh_o9iM&t=185s">Watch Video</a>
       </div>
       <div class="content-right">
-      <img src={image3} />
+        <img src={image3} />
       </div>
     </div>
   )
@@ -56,50 +56,160 @@ const jsCont = () => {
 
 function App() {
 
+
+
   const [cont, setCont] = useState(htmlCont);
   const [countCss, setCountCss] = useState(0);
   const [countHtml, setCountHtml] = useState(0);
   const [countJs, setCountJs] = useState(0);
 
 
+  const [styleHtml, setStyleHtml] = useState({
+    color: "black",
+    background: "#ffffff"
+
+  });
+
+  const [styleCss, setStyleCss] = useState({
+    color: "black",
+    background: "#ffffff",
+  });
+
+  const [styleJs, setStyleJs] = useState({
+    color: "black",
+    background: "#ffffff"
+  });
+
+
+
+
   const handeleCont = (event) => {
+
     console.log(event.target.name);
 
+    // change to html cont
+    if (event.target.name === 'html') {
 
-    if (event.target.name === 'html'){
+      // setting the style for html
+      setStyleHtml((previous) => {
+        return ({
+          color:'pink',
+          background: "orange",
+        });
+
+      });
+
+      setStyleCss((previous) => {
+        return ({
+            color:'black',
+            background: "#ffffff",
+          });
+        });
+
+      setStyleJs((previous) => {
+          return ({
+            color:'black',
+            background: "#ffffff",
+          });
+        });
+
+
+      // setting cont
       setCont(htmlCont);
     }
-    else if(event.target.name === 'css'){
+
+
+    // change to css cont
+    else if (event.target.name === 'css') {
+
+      // set style css
+      setStyleHtml((previous) => {
+        return ({
+          color:'black',
+          background: "#ffffff",
+
+        });
+
+      });
+
+      setStyleCss((previous) => {
+        return ({
+            color:'pink',
+            background: "orange",
+
+          });
+        });
+
+      setStyleJs((previous) => {
+          return ({
+            color:'black',
+            background: "#ffffff",
+
+          });
+        });
+
+
 
       // count logic Simple explanation with useState
-      setCountCss((prev) =>{
-        return prev+1;
-      })
+      setCountCss((prev) => {
+        return prev + 1;
+      });
 
       // container logic with useState
       setCont(cssCont);
     }
-    else if(event.target.name === 'js'){  
+
+
+    else if (event.target.name === 'js') {
+
+      // style in JS
+      setStyleHtml((previous) => {
+        return ({
+          color:'black',
+          background: "#ffffff",
+
+        });
+
+      });
+
+      setStyleCss((previous) => {
+        return ({
+            color:'black',
+            background: "#ffffff",
+
+          });
+        });
+
+      setStyleJs((previous) => {
+          return ({
+            color:'pink',
+            background: "orange",
+
+          });
+        });
+
+      // change JS Cont
       setCont(jsCont);
+
     }
-    
-     
+
   }
 
   return (
     <div classNameName="App">
       <div className="hero">
-        
+
         <div className="btn-box">
-          <button id="btn1" name = 'html' onClick={handeleCont}><i className="fa fa-html5"></i>HTML</button>
-          <button id="btn2" name = 'css' onClick={handeleCont}><i className="fa fa-css3"></i>CSS { countCss }</button>
-          <button id="btn3" name = 'js' onClick={handeleCont}><i className="fa fa-codepen"></i>JAVASCRIPT</button>
+          <button id="btn1" name='html' onClick={handeleCont} style={styleHtml}>
+            <i className="fa"></i>HTML</button>
+          <button id="btn2" name='css' onClick={handeleCont} style={styleCss}>
+            <i className="fa"></i>CSS {countCss}</button>
+          <button id="btn3" name='js' onClick={handeleCont} style={styleJs}>
+            <i className="fa"></i>JAVASCRIPT</button>
         </div>
 
-       
-
         {
-          cont  
+          cont
         }
 
 
